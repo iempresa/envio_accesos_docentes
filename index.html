@@ -248,12 +248,23 @@
 
         const PLANTILLAS = {
             "Administración de Negocios Internacionales": "https://docs.google.com/presentation/d/13CAk39hOZLwzU-exQvXwsyLLqnANWwYT7Wab7UqeKD0/edit?usp=sharing",
-            "Contabilidad": "https://docs.google.com/presentation/d/1gDVjw6H38lnRzK76hV0V8CCI3EPEJRoBpajLddRf_8c/edit?usp=sharing"
+            "Contabilidad": "https://docs.google.com/presentation/d/1gDVjw6H38lnRzK76hV0V8CCI3EPEJRoBpajLddRf_8c/edit?usp=sharing",
+            "Marketing": "https://docs.google.com/presentation/d/1mwYaIKbOtFcePRD3Q6JMp9YplB83rrgKC0YtL1JvtkI/edit?slide=id.g25ab4cfd9c3_0_1#slide=id.g25ab4cfd9c3_0_1",
+            "Desarrollo de Sistemas de Información": "https://docs.google.com/presentation/d/1n2_OyzgW2DA5KIGABMJ0A32rDa0oJJiGLptQ2J7YkIE/edit?slide=id.g25ab4cfd9c3_0_1#slide=id.g25ab4cfd9c3_0_1"
         };
 
         const INFORMES_FINAL = {
             "Administración de Negocios Internacionales": "https://docs.google.com/document/d/1IvYdns_fEvT8KCbe9z7Lt5gZPEEtahM4HgjqBEkvLeI/edit?usp=drive_link",
-            "Contabilidad": "https://docs.google.com/document/d/15hAjq_wLVmabTrRkyDoCQh9ZA6VMJYwxQaWnf8zOePI/edit?tab=t.0" 
+            "Contabilidad": "https://docs.google.com/document/d/15hAjq_wLVmabTrRkyDoCQh9ZA6VMJYwxQaWnf8zOePI/edit?tab=t.0",
+            "Marketing": "https://docs.google.com/document/d/1sE-AMx5yj8R2f2F0JuCHmmUPkCrDr2VFICTIn7eCXaI/edit?usp=sharing",
+            "Desarrollo de Sistemas de Información": "https://docs.google.com/document/d/1nTd6WH8VpqlWQf6YVtXW6WD9HBqXDIodMeZShDU2zbA/edit?usp=sharing"
+        };
+
+        const PROGRAMAS_MAP = {
+            "Administración de Negocios Internacionales": "Admin",
+            "Contabilidad": "Conta",
+            "Marketing": "Marketing",
+            "Desarrollo de Sistemas de Información": "Sistemas"
         };
 
         let currentStep = 0;
@@ -282,6 +293,8 @@
                         <option value="" disabled selected>Seleccione una carrera...</option>
                         <option value="Administración de Negocios Internacionales">Administración de Negocios Internacionales</option>
                         <option value="Contabilidad">Contabilidad</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Desarrollo de Sistemas de Información">Desarrollo de Sistemas de Información</option>
                     </select>
                 </div>
                 <div class="field-group">
@@ -326,7 +339,7 @@
 
             seleccionadas.forEach(carrera => {
                 const url = INFORMES_FINAL[carrera];
-                const labelName = carrera === "Administración de Negocios Internacionales" ? "Admin" : "Conta";
+                const labelName = PROGRAMAS_MAP[carrera] || "Admin";
                 const div = document.createElement('div');
                 div.className = 'field-group';
                 div.innerHTML = `
